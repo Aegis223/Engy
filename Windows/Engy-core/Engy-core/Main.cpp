@@ -14,6 +14,13 @@ int main(int argc, char* args[])
 	while (!u_Window->closed()) {
 		u_Window->clear();
 
+		glBegin(GL_QUADS);
+			glVertex2f(-0.5, -0.5);
+			glVertex2f( 0.5, -0.5);
+			glVertex2f( 0.5,  0.5);
+			glVertex2f(-0.5,  0.5);
+		glEnd();
+
 		u_Window->update();
 	}
 

@@ -53,6 +53,16 @@ namespace engy { namespace graphics {
 			win->m_Y = ypos;																		//m_Y equal to their retrieved values.
 		}
 
+		void resize_callback(GLFWwindow* window, int width, int height)
+		{
+			Window* win = (Window*)glfwGetWindowUserPointer(window);
+			
+			win->m_Width = width;
+			win->m_Height = height;
+
+			glViewport(0, 0, width, height);
+		}
+
 		void Window::getMousePos(double &x, double &y)
 		{
 			x = m_X;
@@ -109,6 +119,7 @@ namespace engy { namespace graphics {
 			glfwSetKeyCallback(m_Window, key_callback);									// We set our callback's to their respective calling function. //
 			glfwSetMouseButtonCallback(m_Window, mouse_button_callback);				//	    These functions are predefined in the GLFW Library     //
 			glfwSetCursorPosCallback(m_Window, mouse_pos_callback);						/////////////////////////////////////////////////////////////////
+			glfwSetFramebufferSizeCallback(m_Window, resize_callback);
 			glfwSwapInterval(1);	//This defines how often we swap our buffers in the update function
 
 			return 1;
