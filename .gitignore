@@ -3,3 +3,4 @@
 **/*.pdb
 **/*.idb
 **/*.tlog
+**/*.DS_Store
