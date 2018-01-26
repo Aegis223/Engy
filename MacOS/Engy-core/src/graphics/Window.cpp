@@ -29,7 +29,7 @@ namespace engy { namespace graphics {
 
 	bool Window::closed() const
 	{
-		return glfwWindowShouldClose(m_Window);
+		return (1 == glfwWindowShouldClose(m_Window));
 	}
 
 	void Window::clear() const
@@ -41,6 +41,42 @@ namespace engy { namespace graphics {
 	{
 		glfwSwapBuffers(m_Window);
 		glfwPollEvents();
+	}
+
+	void Window::getCursorPos(double &x, double &y)
+	{
+		x = m_X;
+		y = m_Y;
+	}
+
+	bool Window::isKeyPressed(int key) const
+	{
+		return m_Keys[key];
+	}
+
+	bool Window::isButtonPressed(int button) const
+	{
+		return m_Buttons[button];
+	}
+
+	void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+	{
+		Window* win = (Window*)glfwGetWindowUserPointer(window);
+
+		win->m_Keys[key] = action != GLFW_RELEASE;
+	}
+
+	void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
+	{
+		Window* win = (Window*)glfwGetWindowUserPointer(window);
+
+		win->m_Buttons[button] = action != GLFW_RELEASE;
+	}
+	void cursor_pos_callback(GLFWwindow* window, double xpos, double ypos) {
+		Window* win = (Window*)glfwGetWindowUserPointer(window);
+
+		win->m_X = xpos;
+		win->m_Y = ypos;
 	}
 
 	void resize_callback(GLFWwindow* window, int width, int height)
@@ -71,6 +107,9 @@ namespace engy { namespace graphics {
 
 		glfwSetWindowUserPointer(m_Window, this);
 		glfwSetFramebufferSizeCallback(m_Window, resize_callback);
+		glfwSetKeyCallback(m_Window, key_callback);
+		glfwSetMouseButtonCallback(m_Window, mouse_button_callback);
+		glfwSetCursorPosCallback(m_Window, cursor_pos_callback);
 		glfwMakeContextCurrent(m_Window);
 		glfwSwapInterval(1);
 
