@@ -1,6 +1,8 @@
 #include "src/graphics/Window.h"
+#include "src/maths/Maths.h"
 
 using namespace engy;
+using namespace maths;
 using namespace graphics;
 
 int main(int argc, char* args[])
