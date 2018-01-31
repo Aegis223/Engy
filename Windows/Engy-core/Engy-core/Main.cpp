@@ -1,9 +1,9 @@
-#include <iostream>
-
 #include "src/graphics/Window.h"
+#include "src/maths/Maths.h"
 
 using namespace engy;
 using namespace graphics;
+using namespace maths;
 
 int main(int argc, char* args[]) 
 {
