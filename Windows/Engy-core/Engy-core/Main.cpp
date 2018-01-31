@@ -11,6 +11,10 @@ int main(int argc, char* args[])
 
 	glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
 
+	mat4 a = mat4::identity();
+
+	std::cout << a << std::endl;
+
 	while (!u_Window->closed()) {
 		u_Window->clear();
 
