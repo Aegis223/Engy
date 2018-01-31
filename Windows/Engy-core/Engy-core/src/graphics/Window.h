@@ -1,6 +1,5 @@
 #pragma once
 
-<<<<<<< HEAD
 #include <iostream>
 
 #include <GL\glew.h>
@@ -62,13 +61,5 @@ namespace engy { namespace graphics {
 			friend void mouse_pos_callback(GLFWwindow* window, double xpos, double ypos);
 			friend void resize_callback(GLFWwindow* window, int width, int height);
 		};
-=======
-#include <GL\glew.h>
-#include <GLFW\glfw3.h>
-
-namespace engy { namespace graphics {
-
-
->>>>>>> dev
 	}
 }
