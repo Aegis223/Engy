@@ -21,6 +21,7 @@
     <ClCompile Include="src\graphics\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="src\maths\vec2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -33,11 +34,14 @@
     <ClCompile Include="src\maths\mat4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+=======
+>>>>>>> dev
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\graphics\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="src\maths\vec2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -56,5 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+=======
+>>>>>>> dev
   </ItemGroup>
 </Project>

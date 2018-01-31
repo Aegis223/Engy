@@ -73,6 +73,7 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\graphics\Window.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="src\maths\mat4.cpp" />
     <ClCompile Include="src\maths\vec2.cpp" />
     <ClCompile Include="src\maths\vec3.cpp" />
@@ -88,6 +89,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+=======
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\graphics\Window.h" />
+>>>>>>> dev
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
