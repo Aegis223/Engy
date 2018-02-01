@@ -16,10 +16,14 @@ int main(int argc, char* args[])
 		u_Window->clear();
 
 		glBegin(GL_QUADS);
-			glVertex2f(-0.5f, -0.5f);
+			glVertex2f(-0.5f, -0.5);
+			glColor3f(1.0f, 0.0f, 0.0f);
 			glVertex2f( 0.5f, -0.5f);
+			glColor3f(0.0f, 1.0f, 0.0f);
 			glVertex2f( 0.5f,  0.5f);
-			glVertex2f(-0.5f,  0.5f);
+			glColor3f(0.0f, 0.0f, 1.0f);
+			glVertex2f(-0.5f, 0.5);
+			glColor3f(0.0f, 1.0f, 0.0f);
 		glEnd();
 
 		u_Window->update();
